@@ -33,3 +33,4 @@ if (count($_POST) > 0) {
     echo $_POST['kasutaja'].'<br />';
     echo $_POST['parool'].'<br />';
 }};
+echo '<hr />';
