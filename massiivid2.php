@@ -63,3 +63,11 @@ foreach ($opilased as $opilane) {
     echo '-------------'.'<br />';
 }
 '<hr />';
+foreach ($opilased as $opilane) {
+    ksort($opilased);
+    foreach ($opilane as $voti => $vaartus) {
+        echo $voti.' - '.$vaartus.'<br />';
+    }
+    echo '-------------'.'<br />';
+}
+'<hr />';
