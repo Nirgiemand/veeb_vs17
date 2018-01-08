@@ -1,3 +1,4 @@
+
 <?php
 /**
  * Created by PhpStorm.
@@ -34,3 +35,29 @@ if (count($_POST) > 0) {
     echo $_POST['parool'].'<br />';
 }};
 echo '<hr />';
+
+echo 'Arva arv ära: <br />';
+echo '
+    <form action="'.$_SERVER['PHP_SELF'].'" method="post">
+        <input type="text" name="kasutajaArv">
+        <input type="submit" value="Kontrolli!">
+    </form>
+';
+
+
+$serveriNumber = 35;
+$kasutajaArv = $_POST['kasutajaArv'];
+if (strlen($kasutajaArv) > 0) {
+    if($kasutajaArv > $serveriNumber)
+        echo 'Sinu arv on suurem kui välja mõeldud <br />';
+    }
+    if ($kasutajaArv < $serveriNumber) {
+        echo 'Sinu arv on väiksem kui välja mõeldud <br />';
+    }
+    if(abs($kasutajaArv - $serveriNumber) <= 5) {
+        if($kasutajaArv == $serveriNumber) {
+            echo 'Õige! Väljamõeldud arv oli '.$serveriNumber.'<br />';
+            exit;
+        }
+        echo 'Aga oled juba väga lähedal õigele vastusele <br />';
+    };
