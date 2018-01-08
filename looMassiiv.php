@@ -55,7 +55,7 @@ echo '<hr>';
  * Kontrolli kas kohad on vahetatud kasutades
  * valjastaMassiiv funktsiooni
 */
-$mas = array(10, 13, 99, 14, 15, 16);
+$mas = array(15, 20, 57, 16, 12, 21);
 valjastaMassiiv($mas);
 echo '<hr>';
 $suurim = array_search(max($mas), $mas);
@@ -90,7 +90,7 @@ echo '<hr>';
  * Massiiv on 1, 0, 6, 0, 0, 3, 5
  * Tulemus: 1 * 6 * 5 = 30
 */
-$kmasssiiv = array(1, 0, 6, 0, 0, 3, 5);
+$kmasssiiv = array(2, 1, 3, 0, 0, 4, 7);
 function elementideKorrutis($rida){
     $uusrida = array();
     for($i = 0; $i < (count($rida)); $i++){
