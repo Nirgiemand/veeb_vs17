@@ -16,12 +16,20 @@ echo '
 
 echo '<pre>';
 echo $_SERVER['PHP_SELF'];
-echo '<hr />';
-print_r($_GET);
-print_r($_POST);
-print_r($_REQUEST);
-echo '</pre>';
 
 echo '<hr />';
-echo $_POST['kasutaja'].'<br />';
-echo $_POST['parool'].'<br />';
+if (count($_POST) > 0) {
+    foreach ($_POST as $element) {
+        if(strlen($element) == 0) {
+            echo 'Tuleb täita väljad<br />';
+            exit;
+        }
+    print_r($_GET);
+    print_r($_POST);
+    print_r($_REQUEST);
+    echo '</pre>';
+
+    echo '<hr />';
+    echo $_POST['kasutaja'].'<br />';
+    echo $_POST['parool'].'<br />';
+}};
