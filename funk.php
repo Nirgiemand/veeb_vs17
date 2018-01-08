@@ -16,37 +16,60 @@ function raamatuVorm () {
         </form>
     ';
 }
+/*
+ * Koostame funtksiooni, mis vormisolevad andmed salvestab massiivi
+ * */
+function loeVormist(){
+    raamatuVorm();
+    $raamat = array();
+    if(count($_POST) > 0){
+        foreach ($_POST as $voti => $vaartus){
+            if(strlen($vaartus) == 0){
+                echo 'Kõik väljad peavad olema täidetud<br />';
+                exit;
+            }
+            $raamat[$voti] = $vaartus;
+        }
+    }
+    return $raamat;
+}
 
-function salvestaRaamat ($raamat, $failinimi) {
-    if(file_exists($fail) and is_file($fail) and is_writable($fail)
-    ){
-        $fail=fopen($failinimi, 'a') or die ('Probleem faili avamisega');
-        foreach ($raamat as $element) {
+
+function salvestaRaamat($raamat, $failinimi){
+    if(file_exists($failinimi) and is_file($failinimi) and is_writable($failinimi)){
+        $fail = fopen($failinimi, 'a') or die('Probleem faili avamisega');
+        foreach ($raamat as $element){
             fwrite($fail, $element."\n");
         }
-        fwrite($fail, "-----\n");
+        fwrite($fail, "----\n");
         fclose($fail);
-        echo 'Andmed on sisestatud <br />';}
-    else {
+        echo 'Andmed on sisestatud<br />';
+    } else {
         echo 'Probleem failiga '.$failinimi.'<br />';
-        }
-    };
+    }
+}
 
-function loeAndmeid ($failinimi) {
-    if(file_exists($failinimi) and is_file($failinimi) and is_readable($failinimi))  {
-        $fail = fopen($failinimi,'r');
+
+function loeAndmeid($failinimi){
+    if(file_exists($failinimi) and is_file($failinimi) and is_readable($failinimi)){
+        $fail = fopen($failinimi, 'r');
         echo '<table border="1">';
-            echo '<tr>';
-                echo '<th> Pealkiri </th>';
-                echo '<th> Autor </th>';
-                echo '<th> Trükikoda </th>';
-                echo '<th> Seisund </th>';
-            echo '</tr>';
-            while (! feod($fail)) {
-                echo '<td>';
-                echo fgets($fail);
-                echo '</td>';
+        echo '<tr>';
+        echo '<th>Pealkiri</th>';
+        echo '<th>Autor</th>';
+        echo '<th>Trükikoda</th>';
+        echo '<th>Seisund</th>';
+        echo '</tr>';
+        echo '<tr>';
+        while(! feof($fail)){
+            $rida = fgets($fail);
+            if($rida != "----\n") {
+                echo '<td>' . $rida . '</td>';
+            } else {
+                echo '</tr>';
             }
+        }
         echo '</table>';
+        fclose($fail);
     }
 }
