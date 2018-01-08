@@ -47,3 +47,11 @@ $opilased = array (
 echo '<pre />';
 print_r($opilased);
 echo '<pre />';
+
+foreach ($opilased as $opilane) {
+    foreach ($opilane as $voti => $vaartus) {
+        echo $voti.' - '.$vaartus.'<br />';
+    }
+    echo '-------------'.'<br />';
+}
+echo '<hr />';
