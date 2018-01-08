@@ -11,3 +11,39 @@ $opilane = array(
     'vanus' => 16,
     'klass' => 10,
 );
+echo '<pre>';
+print_r($opilane);
+echo '<pre>';
+
+echo '<hr />';
+
+foreach ($opilane as $voti => $vaartus) {
+    echo $voti.' - '.$vaartus.'<br />';
+}
+
+echo '<hr />';
+
+$opilased = array (
+    array(
+        'eesnimi' => 'Mart',
+        'perenimi' => 'Lepp',
+        'vanus' => 16,
+        'klass' => 10,
+    ),
+    array (
+        'eesnimi' => 'Kadi',
+        'perenimi' => 'Minnesota',
+        'vanus' => 17,
+        'klass' => 11,
+    ),
+    array (
+        'eesnimi' => 'Mirko',
+        'perenimi' => 'Panzer',
+        'vanus' => 18,
+        'klass' => 12,
+    )
+);
+
+echo '<pre />';
+print_r($opilased);
+echo '<pre />';
