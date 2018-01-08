@@ -71,3 +71,4 @@ foreach ($opilased as $opilane) {
     echo '-------------'.'<br />';
 }
 echo '<hr />';
+echo '<br />';
