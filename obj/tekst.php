@@ -25,7 +25,10 @@ class tekst
     // klassi tegevused
     // klassi meetodid
 
-
+    // teksti väljastamine
+    function prindiTekst () {
+        echo $this->sone.'<br />';
+    }
     // klassi määramine
     function maaraTekst ($s) {
         $this->sone = $s;

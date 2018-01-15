@@ -18,3 +18,7 @@ $minuTekst = new tekst('Tere maailm!');
 echo '<pre>';
 print_r ($minuTekst);
 echo '</pre>';
+
+// väljastame objekti sone väärtuse
+
+$minuTekst->prindiTekst();
