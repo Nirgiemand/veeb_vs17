@@ -10,6 +10,8 @@ require_once 'tekst.php';
 // loome reaalse objekti tekst-klassi abil
 
 $minuTekst = new tekst();
+// väärtustame sone muutuja
+$minuTekst->sone ='Tere maailm!';
 
 // teostame test-vaade antud objektist
 
