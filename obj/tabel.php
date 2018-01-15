@@ -13,6 +13,7 @@ class tabel
     var $pealkirjad = array();
     var $veergudeArv;
 
+    // klassi meetodid
     /**
      * tabel constructor.
      * @param array $pealkirjad
@@ -22,6 +23,13 @@ class tabel
         $this->pealkirjad = $pealkirjad;
         $this->veergudeArv = count($pealkirjad);
     }
-    // klassi meetodid
 
+    // lisa rida
+    function lisaRida ($rida) {
+        if(count($rida) != $this->veergudeArv) {
+            return false;
+        }
+        array_push($this->tabeliSisu,$rida);
+        return true;
+    }
 }
