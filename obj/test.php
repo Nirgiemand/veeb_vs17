@@ -11,7 +11,7 @@ require_once 'tekst.php';
 
 $minuTekst = new tekst();
 // väärtustame sone muutuja
-$minuTekst = new tekst('Tere maailm!');
+$minuTekst = new tekst('<strong>DR.</strong>an<strong>DRE</strong>');
 
 // teostame test-vaade antud objektist
 
