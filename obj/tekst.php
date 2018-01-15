@@ -17,7 +17,7 @@ class tekst
     /**
      * tekst constructor.
      */
-    public function __construct($s)
+    public function __construct($s = '')
     {
         $this-> maaraTekst($s);
     }
