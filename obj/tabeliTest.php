@@ -12,6 +12,7 @@ $minuTabel = new tabel(array('a','b','c'));
 $minuTabel->lisaRida(array('1','2','3'));
 $minuTabel->lisaRida(array('4','5','6'));
 $minuTabel->lisaRida(array('7','8','9'));
+$minuTabel->lisaReaKirjeldusega(array('c'=>5,'a'=>2,'b'=>10));
 $minuTabel->prindiTabel();
 // väljastame tabeli kuju
 echo '<pre>';
