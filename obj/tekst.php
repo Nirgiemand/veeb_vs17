@@ -11,4 +11,11 @@ class tekst
     // klassi omadused
     // klassi muutujad
     var $sone = '';
+
+    // klassi tegevused
+    // klassi meetodid
+    // klassi määramine
+    function maaraTekst ($s) {
+        $this->sone = $s;
+    }
 }
